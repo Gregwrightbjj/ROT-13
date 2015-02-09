@@ -31,5 +31,19 @@ var translateCharacter = function(character) {
 
   // Anything else is a number or symbol. Leave it alone.
   return character;
-}
+};
+/*  cant get this to work...lol
+var translateAllCharacter = function(string){
+  return _.every(string, translateCharacter)
+}   */
+$("#inputTranslate").on("click", function(evt){
+  
+ 
+   var code = translateCharacter($("#inputText").val());
+
+$("#displayText").append(code);
+  
+    
+
+});
 
