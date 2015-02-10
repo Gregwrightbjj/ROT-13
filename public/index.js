@@ -25,23 +25,26 @@ var translateCharacter = function(character) {
     if (charCode < 78) {
       return String.fromCharCode(charCode + 13)
     }
-    // N-Z
+    // N-Zgit
     return String.fromCharCode(charCode - 13)
   }
 
   // Anything else is a number or symbol. Leave it alone.
   return character;
 };
-/*  cant get this to work...lol
+/*
 var translateAllCharacter = function(string){
   return _.every(string, translateCharacter)
 }   */
 $("#inputTranslate").on("click", function(evt){
   
  
-   var code = translateCharacter($("#inputText").val());
+    var inputText = $("#inputText").val()
+    var code = _.map(inputText, translateCharacter).join("")
 
-$("#displayText").append(code);
+    console.log(inputText, code)
+
+    $("#displayText").text(code);
   
     
 
